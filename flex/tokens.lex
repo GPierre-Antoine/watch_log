@@ -19,7 +19,6 @@ STRING      QUOTE[^"]+QUOTE
 %%
 {MODULE}        return lexed_types::module;
 {IN}            return lexed_types::in;
-{IDENTIFIER}    return lexed_types::identifier;
 {SEMICOLON}     return lexed_types::semicolon;
 {BRACKET_O}     return lexed_types::bracket_open;
 {BRACKET_C}     return lexed_types::bracket_close;
@@ -29,6 +28,7 @@ STRING      QUOTE[^"]+QUOTE
 {MESSAGE}       return lexed_types::message;
 {REGEX}         return lexed_types::regex;
 {STRING}        return lexed_types::string;
+{IDENTIFIER}    return lexed_types::identifier;
 .        ;
 %%
 int main (int argc, char ** argv)
