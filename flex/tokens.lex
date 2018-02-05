@@ -1,5 +1,5 @@
 %{
-#include "../tokens.h"
+#include "~/workspace/watch_log/tokens.h"
 %}
 
 MODULE      module
@@ -8,7 +8,7 @@ FILE        filedddd
 REGEX       regex
 MESSAGE     message
 HANDLER     handler
-IDENTIFIER      [a-z][a-z_]+
+IDENTIFIER  [a-z][a-z_]+
 COLON       :
 SEMICOLON   ;
 BRACKET_O   \{
