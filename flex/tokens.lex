@@ -1,24 +1,36 @@
 %{
-
+#include "tokens.h"
 %}
 
 MODULE      module
 IN          in
-FILE        file
+FILE        filedddd
 REGEX       regex
 MESSAGE     message
-STRING      [a-z][a-z_]+
+HANDLER     handler
+IDENTIFIER      [a-z][a-z_]+
 COLON       :
 SEMICOLON   ;
 BRACKET_O   {
 BRACKET_C   }
+QUOTE       "
+STRING      QUOTE[^"]+QUOTE
 IGNORE      .
 
 %%
-{LINK}{QUOTE}   {in_tag=1;}
-{QUOTE}         {if (in_tag==1){in_tag=0;printf("\n");}}
-{WS}            ;
-.              { if (in_tag){ printf(yytext);}}
+{MODULE}        return lexed_types::module;
+{IN}            return lexed_types::in;
+{IDENTIFIER}    return lexed_types::identifier;
+{SEMICOLON}     return lexed_types::semicolon;
+{BRACKET_O}     return lexed_types::bracket_open;
+{BRACKET_C}     return lexed_types::bracket_close;
+{COLON}         return lexed_types::colon;
+{FILE}          return lexed_types::file;
+{HANDLER}       return lexed_types::handler;
+{MESSAGE}       return lexed_types::message;
+{REGEX}         return lexed_types::regex;
+{STRING}        return lexed_types::string;
+{IGNORE}        ;
 %%
 int main (int argc, char ** argv)
 {
