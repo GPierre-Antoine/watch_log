@@ -15,7 +15,6 @@ BRACKET_O   \{
 BRACKET_C   \}
 QUOTE       "
 STRING      QUOTE[^"]+QUOTE
-IGNORE      .
 
 %%
 {MODULE}        return lexed_types::module;
@@ -30,7 +29,7 @@ IGNORE      .
 {MESSAGE}       return lexed_types::message;
 {REGEX}         return lexed_types::regex;
 {STRING}        return lexed_types::string;
-{IGNORE}        ;
+.        ;
 %%
 int main (int argc, char ** argv)
 {
