@@ -4,7 +4,7 @@
 
 MODULE      module
 IN          in
-FILE        filedddd
+FILE        file
 REGEX       regex
 MESSAGE     message
 HANDLER     handler
