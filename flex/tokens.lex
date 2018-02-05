@@ -11,8 +11,8 @@ HANDLER     handler
 IDENTIFIER      [a-z][a-z_]+
 COLON       :
 SEMICOLON   ;
-BRACKET_O   {
-BRACKET_C   }
+BRACKET_O   \{
+BRACKET_C   \}
 QUOTE       "
 STRING      QUOTE[^"]+QUOTE
 IGNORE      .
