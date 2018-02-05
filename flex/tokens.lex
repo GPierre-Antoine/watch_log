@@ -1,5 +1,5 @@
 %{
-#include "tokens.h"
+#include "../tokens.h"
 %}
 
 MODULE      module
