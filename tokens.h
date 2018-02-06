@@ -5,23 +5,19 @@
 #ifndef WATCH_LOG_TOKENS_H
 #define WATCH_LOG_TOKENS_H
 
-enum class lexed_types {
+enum lexed_types {
     module,
-    in,
-
     identifier,
-
     semicolon,
+    in,
     bracket_open,
-    bracket_close,
+    brace_open,
+    type,
     colon,
-
-    file,
-    handler,
-    message,
-    regex,
-
-    string
+    comma,
+    string,
+    bracket_close,
+    brace_close,
 
 };
 
